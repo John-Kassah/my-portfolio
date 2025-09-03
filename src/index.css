@@ -2,4 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 👇 Your custom global fixes */
+html, body {
+  overflow-x: hidden; /* Prevents left-right scroll */
+}
 
+/* img {
+  max-width: 100%;
+  height: auto;
+} */
