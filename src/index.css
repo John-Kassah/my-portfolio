@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 👇 Your custom global fixes */
-html, body {
-  overflow-x: hidden; /* Prevents left-right scroll */
+html {
+  overflow-x: hidden; /* keep horizontal scroll gone */
 }
 
-/* img {
-  max-width: 100%;
-  height: auto;
-} */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* ensure body height matches viewport */
+  overflow-y: scroll; /* always show vertical scrollbar to avoid layout jump */
+}
+
