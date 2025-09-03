@@ -8,7 +8,7 @@ const projects = [
     description:
       "A sleek personal portfolio showcasing my skills in React, Tailwind, and modern UI design(Responsive). - You are currently here",
     image: "/homepage.png",
-    link: "https://example.com/portfolio",
+    link: "https://my-portfolio-gamma-eight-59.vercel.app/",
     github: "https://github.com/John-Kassah/Portfolio.git",
   },
   {
