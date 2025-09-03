@@ -1,9 +1,9 @@
 import React from 'react'
 import { Routes, Route } from 'react-router'
-import HomePage from './Pages/HomePage'
-import AboutPage from './pages/AboutPage'
-import ProjectsPage from './pages/ProjectsPage'
-import ResumePage from './pages/ResumePage'
+import HomePage from './pages/HomePage.jsx'
+import AboutPage from './pages/AboutPage.jsx'
+import ProjectsPage from './pages/ProjectsPage.jsx'
+import ResumePage from './pages/ResumePage.jsx'
 
 const App = () => {
   return (
