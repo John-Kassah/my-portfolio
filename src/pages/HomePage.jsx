@@ -64,7 +64,7 @@ const HomePage = () => {
 
                 <div className='flex justify-center'>
 
-                <div className="w-[26rem] absolute top-[35rem] mx-[12%] mt-[4.5rem] sm:absolute sm:top-[35rem] sm:w-[65%] sm:mt-8 sm:mx-0 sm:left-[17.5%] md:w-1/2 md:ml-5 md:left-0 md:pl-12 flex justify-center md:justify-end lg:absolute lg:top-[30rem] lg:left-[40%]">
+                <div className="w-[26rem] absolute top-[73%] mx-[12%] mt-[4.5rem] sm:absolute sm:top-[35rem] sm:w-[65%] sm:mt-8 sm:mx-0 sm:left-[17.5%] md:w-1/2 md:ml-5 md:left-0 md:pl-12 flex justify-center md:justify-end lg:absolute lg:top-[30rem] lg:left-[40%]">
                     {/* Image wrapper */}
                     <div
                         className="
@@ -101,7 +101,7 @@ const HomePage = () => {
 
                 {/* About Me Section */}
                     <div
-                        className={`max-w-[60%] mt-8 left-[4%] top-[25rem] sm:max-w-[60%] sm:left-[10%] sm:top-[20rem] md:max-w-[40%] md:mr-1 md:left-[30rem] md:top-[6rem] lg:max-w-[35%] lg:left-[4.2rem] lg:top-[10rem] lg:ml-5 p-6 rounded-2xl 
+                        className={`max-w-[80%] mt-8 left-[4%] top-[25rem] sm:max-w-[60%] sm:left-[10%] sm:top-[20rem] md:max-w-[40%] md:mr-1 md:left-[30rem] md:top-[6rem] lg:max-w-[35%] lg:left-[4.2rem] lg:top-[10rem] lg:ml-5 p-6 rounded-2xl 
                             bg-white/10 backdrop-blur-md border border-white/20 
                             text-gray-200 relative transform transition-all duration-1000 ease-out 
                             shadow-[0_0_20px_rgba(59,130,246,0.4)] 

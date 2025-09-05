@@ -198,22 +198,16 @@ const Navbar = () => {
                     </div>
                     <div className="mt-6 space-y-4">
                         {navigation.map((item) => (
-                            <a
+                            <Link
                                 key={item.name}
-                                href={item.href}
+                                to={item.to}
                                 className={`block text-lg font-medium text-white ${
                                     item.name === 'Home' ? 'hover:text-purple-500' : 'hover:text-cyan-400'
                                 }`}
                             >
                                 {item.name}
-                            </a>
+                            </Link>
                         ))}
-                        <a
-                            href="#"
-                            className="block text-lg font-medium text-white hover:text-cyan-400"
-                        >
-                            Log in
-                        </a>
                     </div>
                 </div>
             </Dialog>
