@@ -24,9 +24,9 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
-    // --- underline animation state & refs ---
+    // --- underline animation state & refs for desktop ---
     const navRef = useRef(null)
-    const itemRefs = useRef([]) // will hold each nav item's DOM node
+    const itemRefs = useRef([]) // will hold each desktop nav item's DOM node
     const [indicator, setIndicator] = useState({ left: 0, width: 0, opacity: 0 })
     const [activeIndex, setActiveIndex] = useState(() => {
         if (typeof window !== 'undefined') {
@@ -37,7 +37,7 @@ const Navbar = () => {
         return 0
     })
 
-    // helper to measure and update indicator based on index
+    // helper to measure and update desktop indicator based on index
     const updateIndicator = (index) => {
         if (!navRef.current || !itemRefs.current[index]) {
             setIndicator((s) => ({ ...s, opacity: 0 }))
@@ -85,6 +85,47 @@ const Navbar = () => {
         return () => window.removeEventListener('popstate', handlePop)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+    // --- mobile underline animation state & refs (minimal, scoped to mobile menu only) ---
+    const mobileNavRef = useRef(null)
+    const mobileItemRefs = useRef([]) // will hold each mobile nav item's DOM node
+    const [mobileIndicator, setMobileIndicator] = useState({ left: 0, width: 0, top: 0, opacity: 0 })
+
+    const updateMobileIndicator = (index) => {
+        if (!mobileNavRef.current || !mobileItemRefs.current[index]) {
+            setMobileIndicator((s) => ({ ...s, opacity: 0 }))
+            return
+        }
+        const navRect = mobileNavRef.current.getBoundingClientRect()
+        const itemRect = mobileItemRefs.current[index].getBoundingClientRect()
+
+        // keep the same visual width logic as desktop (centered under the label)
+        const desiredWidth = Math.max(36, Math.round(itemRect.width * 0.68))
+        const left = Math.round(itemRect.left - navRect.left + (itemRect.width - desiredWidth) / 2)
+
+        // position the underline slightly below the item's visible text baseline
+        // compute top relative to mobileNavRef
+        const top = Math.round(itemRect.top - navRect.top + itemRect.height - 6)
+
+        setMobileIndicator({ left, width: desiredWidth, top, opacity: 1 })
+    }
+
+    // update mobile indicator when the menu opens or activeIndex changes
+    useEffect(() => {
+        if (!mobileMenuOpen) return
+        const id = requestAnimationFrame(() => updateMobileIndicator(activeIndex))
+        return () => cancelAnimationFrame(id)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [mobileMenuOpen, activeIndex])
+
+    // when window resizes while mobile menu is open, remeasure mobile indicator
+    useEffect(() => {
+        if (!mobileMenuOpen) return
+        const onResize = () => updateMobileIndicator(activeIndex)
+        window.addEventListener('resize', onResize)
+        return () => window.removeEventListener('resize', onResize)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [mobileMenuOpen, activeIndex])
 
     // helper: check active by current pathname fallback
     const currentPath = typeof window !== 'undefined' ? window.location.pathname : '/'
@@ -196,18 +237,51 @@ const Navbar = () => {
                             <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                         </button>
                     </div>
-                    <div className="mt-6 space-y-4">
-                        {navigation.map((item) => (
-                            <Link
-                                key={item.name}
-                                to={item.to}
-                                className={`block text-lg font-medium text-white ${
-                                    item.name === 'Home' ? 'hover:text-purple-500' : 'hover:text-cyan-400'
-                                }`}
-                            >
-                                {item.name}
-                            </Link>
-                        ))}
+
+                    {/* mobile nav list container now has a ref and is position:relative to host the sliding indicator */}
+                    <div className="mt-6 space-y-4 relative" ref={mobileNavRef}>
+                        {navigation.map((item, idx) => {
+                            const active = isActive(item.to)
+                            return (
+                                <Link
+                                    key={item.name}
+                                    to={item.to}
+                                    onClick={() => {
+                                        // update active and close menu
+                                        setActiveIndex(idx)
+                                        // measure the mobile indicator (ensure measurement happens after DOM update)
+                                        requestAnimationFrame(() => updateMobileIndicator(idx))
+                                        setMobileMenuOpen(false)
+                                    }}
+                                    ref={(el) => (mobileItemRefs.current[idx] = el)}
+                                    className={`block text-lg font-medium text-white ${
+                                        item.name === 'Home' ? 'hover:text-purple-500' : 'hover:text-cyan-400'
+                                    }`}
+                                >
+                                    {item.name}
+                                </Link>
+                            )
+                        })}
+
+                        {/* Mobile sliding indicator (uses same visual style as desktop) */}
+                        <motion.span
+                            className="absolute rounded-full z-0 pointer-events-none"
+                            aria-hidden="true"
+                            initial={false}
+                            animate={{
+                                left: mobileIndicator.left,
+                                width: mobileIndicator.width,
+                                top: mobileIndicator.top,
+                                opacity: mobileIndicator.opacity,
+                            }}
+                            transition={{ type: 'spring', stiffness: 220, damping: 26 }}
+                            style={{
+                                height: 4,
+                                // same gradient / glow as desktop
+                                background: 'linear-gradient(90deg, rgba(124,58,237,1), rgba(6,182,212,1))',
+                                boxShadow: '0 8px 20px rgba(34,211,238,0.08)',
+                            }}
+                        />
                     </div>
                 </div>
             </Dialog>
