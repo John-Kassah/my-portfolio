@@ -12,7 +12,7 @@ const HomePage = () => {
     }, []);
 
     return (
-        <div>
+        <div className="relative ">
             <Navbar />
 
             {/* Hero Section */}
@@ -64,7 +64,7 @@ const HomePage = () => {
 
                 <div className='flex justify-center'>
 
-                <div className="w-[26rem] absolute top-[73%] mx-[12%] mt-[4.5rem] sm:absolute sm:top-[35rem] sm:w-[65%] sm:mt-8 sm:mx-0 sm:left-[17.5%] md:w-1/2 md:ml-5 md:left-0 md:pl-12 flex justify-center md:justify-end lg:absolute lg:top-[30rem] lg:left-[40%]">
+                <div className="w-[26rem] absolute top-[52%] mx-[12%] mt-[4.5rem] sm:absolute sm:top-[35rem] sm:w-[65%] sm:mt-8 sm:mx-0 sm:left-[17.5%] md:w-1/2 md:ml-5 md:left-0 md:pl-12 flex justify-center md:justify-end lg:absolute lg:top-[30rem] lg:left-[40%]">
                     {/* Image wrapper */}
                     <div
                         className="
