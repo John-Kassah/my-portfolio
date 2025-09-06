@@ -36,9 +36,9 @@ export default function ResumePage() {
         company: "Desfasmens Solutions, Tema, Ghana",
         period: "09/2023 – 01/2025",
         bullets: [
-          "Streamlined inventory planning processes, enhancing resource allocation and operational efficiency.",
-          "Coordinated project planning and task assignments, ensuring timely completion through effective monitoring.",
-          "Analyzed operational workflows, leveraging data-driven insights to boost team productivity and project outcomes.",
+          "Streamlined inventory planning processes, enhancing resource allocation and operational efficiency, showcasing critical thinking and problem-solving. ",
+          "Coordinated project planning and task assignments, ensuring timely completion through effective monitoring, demonstrating organizational leadership, and team coordination.",
+          "Analyzed operational workflows, leveraging data-driven insights to boost team productivity and project outcomes, highlighting analytical reasoning and a continuous improvement mindset.",
         ],
       },
       {
@@ -46,9 +46,17 @@ export default function ResumePage() {
         company: "Sunon Asogli Power Ghana LTD, Tema, Ghana",
         period: "02/2021 – 08/2023",
         bullets: [
-          "Designed and implemented an inspection routine that increased efficiency by streamlining equipment safety checks.",
-          "Analyzed operational data to identify and report safety hazards, showcasing attention to detail and proactive problem-solving.",
-          "Tracked and documented equipment performance metrics, ensuring compliance with operational standards.",
+          "Designed and implemented an inspection routine that increased efficiency by streamlining equipment safety checks, demonstrating process optimization and systematic problem-solving.",
+          "Analyzed operational data to identify and report safety hazards, showcasing attention to detail and proactive problem-solving, showcasing attention to detail, risk analysis, and proactive problem-solving.",
+          "Tracked and documented equipment performance metrics, ensuring compliance with operational standards, highlighting meticulous documentation and quality assurance practices.",
+        ],
+      },
+      {
+        title: "Education Gap (Mechanical Engineering Studies)",
+        company: "Tema, Ghana",
+        period: "09/2017 – 01/2021",
+        bullets: [
+          "Full-time student pursuing a degree in Mechanical Engineering.",
         ],
       },
       {
@@ -56,8 +64,8 @@ export default function ResumePage() {
         company: "Peniel Victory School, Tema, Ghana",
         period: "05/2017 – 08/2017",
         bullets: [
-          "Developed engaging exercises and exams, enhancing student comprehension through clear communication and tailored content.",
-          "Designed creative science experiments with limited resources, fostering innovative thinking and adaptability.",
+          "Developed engaging exercises and exams, enhancing student comprehension through clear communication and tailored content, demonstrating effective communication skills.",
+          "Designed creative science experiments with limited resources, fostering innovative thinking and adaptability, showcasing resourcefulness and creative problem-solving.",
           "Improved student performance by delivering personalized feedback, achieving consistent academic progress across the class.",
         ],
       },
@@ -66,8 +74,8 @@ export default function ResumePage() {
         company: "Cal Ghana, Tema, Ghana",
         period: "06/2016 – 04/2017",
         bullets: [
-          "Conducted precise pH and sugar tests on samples, ensuring product quality through rigorous data analysis.",
-          "Monitored and recorded equipment performance metrics, maintaining operational accuracy within strict tolerances.",
+          "Conducted precise pH and sugar tests on samples, ensuring product quality through rigorous data analysis, demonstrating laboratory precision and analytical rigor.",
+          "Monitored and recorded equipment performance metrics, maintaining operational accuracy within strict tolerances..",
           "Inspected production line outputs, applying meticulous attention to detail to uphold quality standards.",
         ],
       },
@@ -96,9 +104,10 @@ export default function ResumePage() {
       soft: ["Report writing", "Communication and Public Speaking", "Leadership", "Resource management", "Proactivity"],
     },
     projects: [
-      "Led a team named PHLO in the first Vice Chancellors Innovation Challenge",
+      "Developed the full backend of an e-commerce website from scratch with secure JWT authentication and role-based authorization for users, product and account management, payment processing with Paystack, and automated email alerts for every order.",
+      "Led a team named PHLO in the first Vice-Chancellors' Innovation Challenge",
       "Investigation of the wear rate of milling blades and levels of heavy metal deposition on milled food samples",
-      "Conducted a review of processing and characterization of coconut shell waste composite with epoxy base.",
+      "Conducted a review of the processing and characterization of coconut shell waste composite with epoxy base.",
     ],
   };
 
