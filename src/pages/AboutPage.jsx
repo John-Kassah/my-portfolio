@@ -47,7 +47,6 @@ const AboutPage = () => {
             </div>
 
             <div>
-              <p><span className="font-semibold text-white">Website:</span> www.example.com</p>
               <p><span className="font-semibold text-white">Phone:</span> +233 55 884 5533/ +233 50 576 4298</p>
               <p><span className="font-semibold text-white">City:</span> Accra, Ghana</p>
             </div>

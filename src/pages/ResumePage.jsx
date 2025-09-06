@@ -179,7 +179,7 @@ export default function ResumePage() {
           {/* LEFT COLUMN - stagger its children (skills, education) */}
           <motion.aside variants={containerVariants} className="space-y-6">
             <motion.div variants={itemVariants} custom={"left"} className="bg-white/3 border border-white/6 rounded-2xl p-5">
-              <h4 className="text-sm font-semibold text-purple-200 mb-3">SKILLS</h4>
+              <h4 className="text-lg font-semibold text-purple-200 mb-3">SKILLS</h4>
               <div className="text-sm text-gray-200">
                 <div className="font-medium">Frontend</div>
                 <ul className="list-disc list-inside ml-3 mt-2 text-xs">
@@ -212,7 +212,7 @@ export default function ResumePage() {
             </motion.div>
 
             <motion.div variants={itemVariants} custom={"left"} className="bg-white/3 border border-white/6 rounded-2xl p-5">
-              <h4 className="text-sm font-semibold text-purple-200 mb-3">EDUCATION</h4>
+              <h4 className="text-lg font-semibold text-purple-200 mb-3">EDUCATION</h4>
               <div className="text-sm text-gray-200 space-y-3">
                 {resume.education.map((e, i) => (
                   <div key={i}>
